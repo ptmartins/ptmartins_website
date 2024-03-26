@@ -1,17 +1,47 @@
+---
+import { Icon } from 'astro-icon/components';
+import ScrollDown from '../components/ScrollDown/ScrollDown.jsx';
+---
+
 <section id="hero" class="section section--hero">
     <div class="wrapper wrapper--hero">
         <h1 class="greetings">
-            <p><span class="tag">&lt;b&gt;</span>Hello<span class="tag">&lt;/b&gt;</span></p>
-            <span class="translucent">I'm</span> <span class="tag">Pedro Martins</span> <span class="translucent">, I'm a front-end web developer based in</span> Cambridge - UK <span class="translucent"> and I craft for the</span> <span class="tag">web</span><span class="translucent">.</span>
+            <p class="greet">
+                <span class="tag">&lt;b&gt;</span>Hello<span class="tag">&lt;/b&gt;</span>
+            </p>
+            <p>
+                I'm Pedro Martins , I'm a front-end web developer based in Cambridge, UK and I craft amazing experiences for the web.
+            </p>
         </h1>
-        <a href="#about" class="btn btn--cta btn--learnMore">Learn More</a>
+        <div class="hero__social">
+            <a href="https://www.facebook.com/pedro.martins.3114935" class="social__link" target="_blank">
+                <Icon name="fa6-brands:facebook-f" />
+            </a>
+            <a href="https://twitter.com/snitramordep" class="social__link" target="_blank">
+                <Icon name="fa6-brands:twitter" />
+            </a>
+            <a href="https://github.com/ptmartins" class="social__link" target="_blank">
+                <Icon name="fa6-brands:github" />
+            </a>
+            <a href="https://codepen.io/snitramordep" class="social__link" target="_blank">
+                <Icon name="fa6-brands:codepen" />
+            </a>
+            <a href="https://www.instagram.com/ptmartins/" class="social__link" target="_blank">
+                <Icon name="fa6-brands:instagram" />
+            </a>
+            <a href="https://www.linkedin.com/in/pedro-martins-ba5b9618" class="social__link" target="_blank">
+                <Icon name="fa6-brands:linkedin" />
+            </a>
+            <a href="mailto:info@pedromartins.com.pt" class="social__link" target="_blank">
+                <Icon name="mdi:email-outline" />
+            </a>
+        </div>
     </div>
+    <ScrollDown client:only />
 </section>
 
 <style>
     .section--hero {
-        background-color: var(--bg-light-color);
-        color: #fff;
         display: flex;
     }
 
@@ -25,15 +55,16 @@
     }
 
     .greetings {
+        color: var(--font-color-light);
         font-size: 2.6rem;
-        font-weight: 800;
-        width: 100%;
+        font-weight: 700;
+        line-height: 1.4;
         text-align: center;
+        width: 100%;
     }
 
-    .greetings p {
-        color: #fff;
-        margin-bottom: 0;
+    .greet {
+        margin-block-end: 1.5rem;
     }
 
     .tag {
@@ -89,6 +120,20 @@
         text-decoration: none;
     }
 
+    .hero__social {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .social__link {
+        color: var(--font-color);
+        transition: var(--default-transition);
+
+        &:hover {
+            color: var(--accent-color);
+        }
+    }
+
     @media all and (min-width: 480px) {
 
         .greetings {
@@ -104,8 +149,9 @@
 
     @media only screen and (min-width: 992px) {
         .greetings {
-            font-size: 6.2rem;
+            font-size: 4rem;
             text-align: left;
+            width: 75%;
         }
 
         .section--hero .btn--cta {
@@ -114,6 +160,11 @@
 
         .greetings--pt {
             font-size: 2.4rem;
+        }
+
+        .social__link {
+            font-size: 3.2rem;
+            margin-right: 2.5rem;
         }
     }
 

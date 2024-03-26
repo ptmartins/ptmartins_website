@@ -10,22 +10,15 @@
                 <Image src={ logo } alt="Logo" width="120" height="38"/>
             </a>
         </div>
-        <nav class="nav">
-            <a href="#" class="nav__link">Home</a>
-            <a href="#about" class="nav__link">About</a>
-            <a href="#skills" class="nav__link">Skills</a>
-            <a href="#contacts" class="nav__link">Contacts</a>
-        </nav>
     </div>
 </header>
 
 <style lang="less">
 
     .header {
-        background-color: var(--bg-light-color);
+        background-color: var(--bg-color);
         display: flex;
         height: 80px;
-        position: fixed;
         width: 100%;
         z-index: 2;
     }
@@ -52,24 +45,6 @@
 
     .logo__image {
         align-self: center;
-    }
-
-    .nav {
-        display: flex;
-        gap: 3rem;
-    }
-
-    .nav__link {
-        color: var(--font-color);
-        font-size: 1.8rem;
-        font-weight: 500;
-        text-decoration: none;
-        text-transform: uppercase;
-        transition: var(--default-transition);
-
-        &:hover {
-            color: var(--accent-color);
-        }
     }
     
 </style>
