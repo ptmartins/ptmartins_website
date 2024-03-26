@@ -1,0 +1,146 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<footer class="footer">
+    <div class="wrapper wrapper--footer">
+        <div class="footer-contacts">
+            <div class="name">Pedro Martins</div>
+            <span class="divider"> | </span>
+            <div class="email"><a href="mailto:pedro@pedromartins.com.pt">pedro@pedromartins.com.pt</a></div>
+            <span class="divider"> | </span>
+            <div class="email"><a href="phone:+44 07399656831">+44 (0)7399 565831</a></div>
+        </div>
+        <div class="footer-social">
+            <a
+                href="https://twitter.com/snitramordep"
+                class="social-item"
+                title="Twitter"
+                target="_blank"
+            > <Icon name="fa6-brands:twitter" /> </a>
+            <a
+                href="https://www.linkedin.com/in/pedro-martins-ba5b9618/"
+                class="social-item"
+                title="Linkedin"
+                target="_blank"
+            > <Icon name="fa6-brands:linkedin" /> </a>
+            <a
+                href="https://codepen.io/snitramordep/"
+                class="social-item"
+                title="Codepen"
+                target="_blank"
+            > <Icon name="fa6-brands:github" /> </a>
+            <a
+                href="https://codepen.io/snitramordep/"
+                class="social-item"
+                title="Codepen"
+                target="_blank"
+            > <Icon name="fa6-brands:codepen" /> </a>
+        </div>
+        <div class="copyright">All rights reserved © 2015 - 2020</div>
+    </div>
+</footer>
+
+<style lang="less">
+
+    .footer {
+        background-color: #19171f;
+        color: var(--neutral-color);
+    }
+
+    .wrapper--footer {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 3rem;
+    }
+
+    .footer-contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 3rem;
+    }
+
+    .footer-contacts a {
+        color: var(--neutral-color);
+        text-decoration: none;
+        -webkit-transition: color 0.2s ease-in;
+        -o-transition: color 0.2s ease-in;
+        transition: color 0.2s ease-in;
+    }
+
+    .footer-contacts a:hover {
+        color: #53f6c7;
+    }
+
+    .footer-social {
+        text-align: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    .social-item {
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        color: #fff;
+        cursor: pointer;
+        height: 42px;
+        line-height: 42px;
+        margin: 0 1.5rem 1.5rem 0;
+        text-decoration: none;
+        transition: all 0.3s ease-in;
+        width: 42px;
+    }
+
+    .social-item:hover {
+        color: #53f6c7;
+        text-decoration: none;
+        border-color: #53f6c7;
+    }
+
+    .social-item:last-child {
+       margin-right: 0;
+    }
+
+    .copyright {
+        color: rgba(255, 255, 255, 0.5);
+        margin-top: 3rem;
+        width: 100%;
+        text-align: center;
+        font-size: 1.4rem;
+    }
+
+    @media only screen and (min-width: 480px) {
+
+        .social-item {
+            margin: 0 1.5rem 0 0;
+        }
+    }
+
+
+    @media only screen and (min-width: 992px) {
+        
+        .wrapper--footer {
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+        }
+
+        .footer-contacts {
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            margin-bottom: 0;
+        }
+    }
+        
+</style>

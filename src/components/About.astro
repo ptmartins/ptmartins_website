@@ -1,0 +1,90 @@
+---
+import TubeStops from "./TubeStops.astro";
+
+const items = [
+	{ 
+		role:  'Software Engineer',
+		place: 'Thomson Reuter - Imagen from Reuters',
+		dates: 'Apr. 2022 - present'
+	},
+	{ 
+		role:  'Frontend Developer',
+		place: 'Wellcome Sanger Institute - Human Cell Atlas',
+		dates: 'Mar. 2021 - Mar. 2022'
+	},
+	{ 
+		role:  'Frontend Developer',
+		place: 'Imagen, Ltd.',
+		dates: 'Mar. 2018 - Feb. 2021'
+	},
+	{ 
+		role:  'Junior Frontend Developer',
+		place: 'Imagen, Ltd.',
+		dates: 'Jun. 2016 - Mar. 2018'
+	},
+	{ 
+		role:  'Junior Developer',
+		place: 'Digital Works',
+		dates: 'Jan. 2016 - Apr. 2016'
+	},
+  { 
+		role:  'Web designer',
+		place: 'Freelance',
+		dates: '2010 - 2016'
+	}
+]
+---
+
+<section id="about" class="section section--about">
+    <div class="wrapper wrapper--about">
+        <h1 class="section-title">&lt; Who am I? &#47;&gt;</h1>
+        <div class="about-contents">
+            <p>
+                I'm a web designer and developer, based in Cambridge - United Kingdom, with an academic
+                background in Marine Biology and Project Management who ended up messing with bits and
+                bytes.
+            </p>
+            <h2 class="experience__title">Experience</h2>
+            <TubeStops items={ items } />
+        </div>
+    </div>
+</section>
+
+<style lang="less">
+
+  .section--about {
+    padding-block-end: 0;
+  }
+
+  .experience__title {
+    font-size: 3.5rem;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .wrapper--about {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      text-align: left;
+    }
+
+    .about-subTitle {
+      font-size: 2.827em;
+    }
+
+    .about-contents {
+      p {
+        font-size: 2.2rem;
+        line-height: calc(2.2rem * 1.5);
+        margin-block-end: 8rem;
+      }
+    }
+
+    .experience__title {
+      margin-block-end: 4.5rem;
+    }
+  }
+</style>

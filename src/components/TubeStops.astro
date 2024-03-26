@@ -1,0 +1,129 @@
+---
+const {items} = Astro.props;
+---
+
+<div class="accordion">
+    {items.map(item => (
+        <div class="accordion__item">
+            <div class="tubeStop">
+                <span class="stop"></span>
+                <span class="line"></span>    
+            </div>
+            <div class="accordion__title">
+                <h2 class="place"> { item.place } </h4>
+                <p class="role"> { item.role } </p>
+                <p class="dates">  { item.dates } </p>    
+            </div>
+        </div>
+    ))}
+</div>    
+
+<style>
+
+    .accordion {
+        margin-bottom: 3rem;
+    }
+
+    .accordion__item {
+        border-bottom: 0;
+        border-radius: .1875rem;
+        padding-inline-start: .75rem;
+        position: relative;
+    }
+
+    .tubeStop {
+        height: 100%;
+        inset-block-start: 6px;
+        inset-inline-start: 0;
+        position: absolute;
+    }
+
+    .stop {
+        background-color: #fff;
+        border-radius: 50%;
+        display: block;
+        height: 17px;
+        transition: var(--default-transition);
+        width: 17px;
+    }
+
+    .stop::before {
+        background-color: var(--neutral-dark-color);
+        content: '';
+        display: block;
+        height: 1.5rem;
+        inset-block-start: -1.5rem;
+        inset-inline-start: 8px;
+        position: relative;
+        width: 2px;
+    }
+
+    .accordion__item:first-child .stop::before,
+    .accordion__item:last-child .line {
+        display: none;
+    }
+
+    .line {
+        background-color: var(--neutral-dark-color);
+        display: block;
+        height: 100%; 
+        inset-inline-start: 8px;
+        position: relative;
+        transition: var(--default-transition);
+        width: 2px;
+    }
+
+    .accordion__title {
+        background-color: var(--bg-color);
+        cursor: pointer;
+        font-weight: 700;
+        padding-block: 0 .75rem;
+        padding-inline: 3rem;
+        transition: var(--default-transition);
+        user-select: none;
+
+    }
+
+    .accordion__content {
+        display: block;
+        max-height: 0;
+        opacity: .75;
+        overflow: hidden;
+        transition: all .4s ease;
+    }
+    
+    .active > .accordion__content {
+        max-height: 100vh;
+    }
+
+    .content__header {
+        padding-block: .75rem;
+        padding-inline: 1.5rem;
+    }
+
+    .dates {
+        font-size: 14px;
+        font-weight: 400;
+        opacity: .75;
+    }
+
+    .place {
+        font-size: 2.1rem;
+        margin-block: 1rem;
+    }
+
+    .role {
+        margin-block-end: 0;
+        opacity: .75;
+    }
+
+    .description {
+        list-style: initial;
+        padding-inline: 3rem 1.5rem;
+    }
+
+    .description__item {
+        padding-block-end: .375rem;
+    }
+
+</style>

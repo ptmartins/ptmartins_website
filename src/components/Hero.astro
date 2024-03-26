@@ -1,0 +1,120 @@
+<section id="hero" class="section section--hero">
+    <div class="wrapper wrapper--hero">
+        <h1 class="greetings">
+            <p><span class="tag">&lt;b&gt;</span>Hello<span class="tag">&lt;/b&gt;</span></p>
+            <span class="translucent">I'm</span> <span class="tag">Pedro Martins</span> <span class="translucent">, I'm a front-end web developer based in</span> Cambridge - UK <span class="translucent"> and I craft for the</span> <span class="tag">web</span><span class="translucent">.</span>
+        </h1>
+        <a href="#about" class="btn btn--cta btn--learnMore">Learn More</a>
+    </div>
+</section>
+
+<style>
+    .section--hero {
+        background-color: var(--bg-light-color);
+        color: #fff;
+        display: flex;
+    }
+
+    .wrapper--hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        text-align: center;
+    }
+
+    .greetings {
+        font-size: 2.6rem;
+        font-weight: 800;
+        width: 100%;
+        text-align: center;
+    }
+
+    .greetings p {
+        color: #fff;
+        margin-bottom: 0;
+    }
+
+    .tag {
+        color: var(--accent-color);
+    }
+
+    .translucent {
+        color: var(--neutral-dark-color);
+    }
+
+    .greetings--pt,
+    .description--pt {
+        color: rgba(149, 163, 179, 0.75);
+        font-size: 1.4rem;
+        font-weight: 700;
+        font-style: italic;
+        width: 100%;
+    }
+
+    .description {
+        font-size: 1.6rem;
+        font-weight: 500;
+        max-width: 1024px;
+        margin-bottom: 6rem;
+    }
+
+    .description--pt {
+        margin-bottom: 12rem;
+    }
+
+    .hero-highlight {
+        color: var(--accent-color);
+    }
+
+    .btn--learnMore {
+        color: var(--accent-color);
+        border-color: var(--accent-color);
+        font-weight: 700;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        padding: .75rem 1.5rem;
+    }
+
+    .section--hero .btn--cta {
+        margin: 5rem auto 0 auto;
+    }
+
+    .btn--learnMore:hover,
+    .btn--learnMore:active {
+        color: #1d1b24;
+        background-color: var(--accent-color);;
+        border-color: var(--accent-color);;
+        text-decoration: none;
+    }
+
+    @media all and (min-width: 480px) {
+
+        .greetings {
+            font-size: 3.2rem;
+        }
+    }
+
+    @media only screen and (min-width: 640px) {
+        .greetings {
+            font-size: 4rem;
+        }
+    }
+
+    @media only screen and (min-width: 992px) {
+        .greetings {
+            font-size: 6.2rem;
+            text-align: left;
+        }
+
+        .section--hero .btn--cta {
+            margin: 5rem auto 0 0;
+        }
+
+        .greetings--pt {
+            font-size: 2.4rem;
+        }
+    }
+
+</style>

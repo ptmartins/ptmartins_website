@@ -1,0 +1,22 @@
+.scrollTop {
+    background-color: var(--accent-color);
+    border-radius: 5px;
+    color: var(--bg-color);
+    cursor: pointer;
+    font-size: 3rem;
+    height: 44px;
+    inset-block-end: 3rem;
+    inset-inline-end: 3rem;
+    line-height: 50px;
+    position: fixed;
+    text-align: center;
+    width: 44px;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.hidden {
+    visibility: hidden;
+}

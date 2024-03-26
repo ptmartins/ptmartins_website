@@ -1,0 +1,126 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<section id="skills" class="section section--skills">
+    <div class="wrapper wrapper--skills">
+        <h1 class="section-title">&lt; Skills &#47;&gt;</h1>
+        <ul class="languages">
+            <li class="language__item" title="HTML 5">
+                <Icon class="language__icon language__icon--html" name="fa6-brands:html5"/>
+                <span class="language__txt">HTML 5</span>
+            </li>
+            <li class="language__item">
+                <Icon class="language__icon language__icon--css" name="fa6-brands:css3"/>
+                <span class="language__txt">CSS 3</span>
+            </li>
+            <li class="language__item">
+                <Icon class="language__icon language__icon--less" name="fa6-brands:less"/>
+                <span class="language__txt">LESS</span>
+            </li>
+            <li class="language__item">
+                <Icon class="language__icon language__icon--js" name="fa6-brands:js"/>
+                <span class="language__txt">Javascript</span>
+            </li>
+            <li class="language__item">
+                <Icon class="language__icon language__icon--php" name="fa6-brands:php"/>
+                <span class="language__txt">PHP</span>
+            </li>
+            <li class="language__item">
+                <Icon class="language__icon language__icon--wordpress" name="fa6-brands:wordpress"/>
+                <span class="language__txt">Wordpress</span>
+            </li>
+            <li class="language__item">
+                <Icon class="language__icon language__icon--angular" name="fa6-brands:angular"/>
+                <span class="language__txt">Angular</span>
+            </li>
+            <li class="language__item">
+                <Icon class="language__icon language__icon--react" name="fa6-brands:react"/>
+                <span class="language__txt">React</span>
+            </li>
+            <li class="language__item">
+                <Icon class="language__icon language__icon--next" name="simple-icons:nextdotjs"/>
+                <span class="language__txt">Next</span>
+            </li>
+            <li class="language__item">
+                <Icon class="language__icon language__icon--astro" name="simple-icons:astro"/>
+                <span class="language__txt">Astro</span>
+            </li>
+            <li class="language__item">
+                <Icon class="language__icon language__icon--npm" name="fa6-brands:npm"/>
+                <span class="language__txt">NPM</span>
+            </li>
+            <li class="language__item">
+                <Icon class="language__icon language__icon--git"  name="fa6-brands:git"/>
+                <span class="language__txt">Git</span>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<style lang="less">
+
+    .languages {
+        display: grid;
+        gap: 3rem;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        list-style: none;
+    }
+
+    .language__item {
+        // border: 2px solid var(--font-color);
+        border-radius: 6px;
+        background-color: var(--bg-lightest-color);
+        color: var(--neutral-color);
+        cursor: pointer;
+        position: relative;
+        text-align: center;
+
+        &::before {
+            aspect-ratio: 1 / 1;
+            content: "";
+            display: block;
+        }
+
+        &:hover {
+            .language__icon {
+                display: none;
+            }
+
+            .language__txt {
+                display: block;
+            }
+        }
+    }
+
+    .language__icon, 
+    .language__txt {
+        inset-block-start: 50%;
+        inset-inline-start: 50%;
+        min-width: 65px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+    }
+
+    .language__icon {
+        font-size: 6rem;
+        transition: var(--default-transition);
+        display: block;
+    }
+
+    .language__txt {
+        font-size: 1.8rem;
+        font-weight: 700;
+        transition: var(--default-transition);
+        display: none;
+    }
+
+    @media all and (min-width: 992px) {
+
+        .language {
+            font-size: 8rem;
+        }
+
+    }
+
+</style>
