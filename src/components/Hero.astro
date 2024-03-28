@@ -1,6 +1,6 @@
 ---
-import { Icon } from 'astro-icon/components';
 import ScrollDown from '../components/ScrollDown/ScrollDown.jsx';
+import Social from '../components/Social.astro';
 ---
 
 <section id="hero" class="section section--hero">
@@ -13,29 +13,7 @@ import ScrollDown from '../components/ScrollDown/ScrollDown.jsx';
                 I'm Pedro Martins , I'm a front-end web developer based in Cambridge, UK and I craft amazing experiences for the web.
             </p>
         </h1>
-        <div class="hero__social">
-            <a href="https://www.facebook.com/pedro.martins.3114935" class="social__link" target="_blank" aria-label="Facebook link">
-                <Icon name="fa6-brands:facebook-f" />
-            </a>
-            <a href="https://twitter.com/snitramordep" class="social__link" target="_blank" aria-label="Twitter link">
-                <Icon name="fa6-brands:twitter" />
-            </a>
-            <a href="https://github.com/ptmartins" class="social__link" target="_blank" aria-label="Github link">
-                <Icon name="fa6-brands:github" />
-            </a>
-            <a href="https://codepen.io/snitramordep" class="social__link" target="_blank" aria-label="Codepen link">
-                <Icon name="fa6-brands:codepen" />
-            </a>
-            <a href="https://www.instagram.com/ptmartins/" class="social__link" target="_blank" aria-label="Instagram link">
-                <Icon name="fa6-brands:instagram" />
-            </a>
-            <a href="https://www.linkedin.com/in/pedro-martins-ba5b9618" class="social__link" target="_blank" aria-label="Linkedin link">
-                <Icon name="fa6-brands:linkedin" />
-            </a>
-            <a href="mailto:info@pedromartins.com.pt" class="social__link" target="_blank" aria-label="Email link">
-                <Icon name="mdi:email-outline" />
-            </a>
-        </div>
+        <Social />
     </div>
     <ScrollDown client:only />
 </section>
@@ -64,7 +42,7 @@ import ScrollDown from '../components/ScrollDown/ScrollDown.jsx';
     }
 
     .greet {
-        margin-block-end: 1.5rem;
+        margin-block-end: 3rem;
     }
 
     .tag {
@@ -121,25 +99,6 @@ import ScrollDown from '../components/ScrollDown/ScrollDown.jsx';
         text-decoration: none;
     }
 
-    .hero__social {
-        display: flex;
-        gap: 3rem;
-    }
-
-    .social__link {
-        align-items: center;
-        color: var(--font-color);
-        display: flex;
-        height: 48px;
-        justify-content: center;
-        transition: var(--default-transition);
-        width: 48px;
-
-        &:hover {
-            color: var(--accent-color);
-        }
-    }
-
     @media all and (min-width: 480px) {
 
         .greetings {
@@ -154,6 +113,11 @@ import ScrollDown from '../components/ScrollDown/ScrollDown.jsx';
     }
 
     @media only screen and (min-width: 992px) {
+        .hero__social {
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+        }
+
         .greetings {
             font-size: 4rem;
             text-align: left;

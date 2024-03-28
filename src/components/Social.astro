@@ -1,0 +1,78 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const { size } = Astro.props;
+const additional_classes = size ? size : '';
+---
+
+<div class={ `hero__social ${additional_classes}` }>
+    <a href="https://www.facebook.com/pedro.martins.3114935" class="social__link" target="_blank" aria-label="Facebook link">
+        <Icon name="fa6-brands:facebook-f" />
+    </a>
+    <a href="https://twitter.com/snitramordep" class="social__link" target="_blank" aria-label="Twitter link">
+        <Icon name="fa6-brands:twitter" />
+    </a>
+    <a href="https://github.com/ptmartins" class="social__link" target="_blank" aria-label="Github link">
+        <Icon name="fa6-brands:github" />
+    </a>
+    <a href="https://codepen.io/snitramordep" class="social__link" target="_blank" aria-label="Codepen link">
+        <Icon name="fa6-brands:codepen" />
+    </a>
+    <a href="https://www.instagram.com/ptmartins/" class="social__link" target="_blank" aria-label="Instagram link">
+        <Icon name="fa6-brands:instagram" />
+    </a>
+    <a href="https://www.linkedin.com/in/pedro-martins-ba5b9618" class="social__link" target="_blank" aria-label="Linkedin link">
+        <Icon name="fa6-brands:linkedin" />
+    </a>
+    <a href="mailto:info@pedromartins.com.pt" class="social__link" target="_blank" aria-label="Email link">
+        <Icon name="mdi:email-outline" />
+    </a>
+</div>
+
+<style lang="less">
+
+    .hero__social {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+        justify-content: center;
+
+        &.small {
+            gap: .1875rem;
+        }
+    }
+
+    .social__link {
+        align-items: center;
+        color: var(--font-color);
+        display: flex;
+        font-size: 2.3rem;
+        height: 48px;
+        justify-content: center;
+        transition: var(--default-transition);
+        width: 48px;
+
+        &:hover {
+            color: var(--accent-color);
+        }
+    }
+
+    @media only screen and (min-width: 992px) {
+        
+        .hero__social {
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+
+            &.small {
+                .social__link {
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        .social__link {
+            font-size: 3.3rem;
+        }
+    }
+
+</style>

@@ -171,7 +171,7 @@ strong {
 }
   
 .section:not(.section--hero) {
-    padding-block: 160px;
+    padding-block: 6rem;
 }
   
 .wrapper {
@@ -189,7 +189,7 @@ strong {
     font-family: "Share Tech Mono", monospace;
     font-size: 3rem;
     font-weight: 600;
-    margin: 0 0 4.8rem 1.5rem;
+    margin: 0 0 4.8rem 0;
     position: relative;
     text-transform: uppercase;
     width: 100%;
@@ -229,6 +229,10 @@ strong {
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
+  .section:not(.section--hero) {
+      padding-block: 16rem;
+  }
+
   .section-title {
     font-size: 6rem;
     margin-bottom: 10rem;

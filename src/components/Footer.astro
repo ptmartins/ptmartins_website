@@ -1,43 +1,16 @@
 ---
 import { Icon } from 'astro-icon/components';
+import Social from '../components/Social.astro';
+
+const year = new Date().getFullYear();
 ---
 
 <footer class="footer">
     <div class="wrapper wrapper--footer">
-        <div class="footer-contacts">
-            <div class="name">Pedro Martins</div>
-            <span class="divider"> | </span>
-            <div class="email"><a href="mailto:pedro@pedromartins.com.pt">pedro@pedromartins.com.pt</a></div>
-            <span class="divider"> | </span>
-            <div class="email"><a href="phone:+44 07399656831">+44 (0)7399 565831</a></div>
-        </div>
+        <div class="copyright">All rights reserved &copy; { year } </div>
         <div class="footer-social">
-            <a
-                href="https://twitter.com/snitramordep"
-                class="social-item"
-                title="Twitter"
-                target="_blank"
-            > <Icon name="fa6-brands:twitter" /> </a>
-            <a
-                href="https://www.linkedin.com/in/pedro-martins-ba5b9618/"
-                class="social-item"
-                title="Linkedin"
-                target="_blank"
-            > <Icon name="fa6-brands:linkedin" /> </a>
-            <a
-                href="https://codepen.io/snitramordep/"
-                class="social-item"
-                title="Codepen"
-                target="_blank"
-            > <Icon name="fa6-brands:github" /> </a>
-            <a
-                href="https://codepen.io/snitramordep/"
-                class="social-item"
-                title="Codepen"
-                target="_blank"
-            > <Icon name="fa6-brands:codepen" /> </a>
+           <Social size="small"/>
         </div>
-        <div class="copyright">All rights reserved © 2015 - 2020</div>
     </div>
 </footer>
 
@@ -49,8 +22,9 @@ import { Icon } from 'astro-icon/components';
     }
 
     .wrapper--footer {
+        align-items: center;
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         flex-wrap: wrap;
         justify-content: space-between;
         padding: 3rem;
@@ -76,15 +50,7 @@ import { Icon } from 'astro-icon/components';
     }
 
     .footer-social {
-        text-align: center;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
+        
     }
 
     .social-item {
@@ -112,8 +78,6 @@ import { Icon } from 'astro-icon/components';
     .copyright {
         color: rgba(255, 255, 255, 0.5);
         margin-top: 3rem;
-        width: 100%;
-        text-align: center;
         font-size: 1.4rem;
     }
 
@@ -128,9 +92,6 @@ import { Icon } from 'astro-icon/components';
     @media only screen and (min-width: 992px) {
         
         .wrapper--footer {
-            -webkit-box-orient: horizontal;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: row;
             flex-direction: row;
         }
 
