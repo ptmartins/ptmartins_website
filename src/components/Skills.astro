@@ -4,7 +4,7 @@ import { Icon } from 'astro-icon/components';
 
 <section id="skills" class="section section--skills">
     <div class="wrapper wrapper--skills">
-        <h1 class="section-title">&lt; Skills &#47;&gt;</h1>
+        <h1 class="section-title"> Skills </h1>
         <ul class="languages">
             <li class="language__item" title="HTML 5">
                 <Icon class="language__icon language__icon--html" name="fa6-brands:html5"/>
@@ -74,6 +74,7 @@ import { Icon } from 'astro-icon/components';
         cursor: pointer;
         position: relative;
         text-align: center;
+        transition: var(--default-transition);
 
         &::before {
             aspect-ratio: 1 / 1;
@@ -82,6 +83,7 @@ import { Icon } from 'astro-icon/components';
         }
 
         &:hover {
+
             .language__icon {
                 display: none;
             }
@@ -108,6 +110,7 @@ import { Icon } from 'astro-icon/components';
     }
 
     .language__txt {
+        color: var(--accent-color);
         font-size: 1.8rem;
         font-weight: 700;
         transition: var(--default-transition);

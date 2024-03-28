@@ -69,6 +69,7 @@ import ScrollDown from '../components/ScrollDown/ScrollDown.jsx';
 
     .tag {
         color: var(--accent-color);
+            font-family: "Share Tech Mono", monospace;
     }
 
     .translucent {
@@ -122,12 +123,17 @@ import ScrollDown from '../components/ScrollDown/ScrollDown.jsx';
 
     .hero__social {
         display: flex;
-        gap: 1.5rem;
+        gap: 3rem;
     }
 
     .social__link {
+        align-items: center;
         color: var(--font-color);
+        display: flex;
+        height: 48px;
+        justify-content: center;
         transition: var(--default-transition);
+        width: 48px;
 
         &:hover {
             color: var(--accent-color);
@@ -163,8 +169,7 @@ import ScrollDown from '../components/ScrollDown/ScrollDown.jsx';
         }
 
         .social__link {
-            font-size: 3.2rem;
-            margin-right: 2.5rem;
+            font-size: 3.3rem;
         }
     }
 

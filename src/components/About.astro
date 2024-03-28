@@ -37,7 +37,7 @@ const items = [
 
 <section id="about" class="section section--about">
     <div class="wrapper wrapper--about">
-        <h1 class="section-title">&lt; About &#47;&gt;</h1>
+        <h1 class="section-title">About</h1>
         <div class="about-contents">
             <p>
               I'm a web designer and developer from Portugal, currently living in Cambridge, UK with an academic background in Marine Biology and Project Management who ended up messing with bits and bytes.
@@ -62,7 +62,16 @@ const items = [
   }
 
   .experience__title {
-    font-size: 3.5rem;
+    align-items: center;
+    display: flex;
+    font-size: 3rem;
+
+    &::before {
+      color: var(--accent-color);
+      content: '>';
+      font-size: 4rem;
+      margin-inline-end: 1.5rem;
+    }
   }
 
   @media only screen and (min-width: 768px) {

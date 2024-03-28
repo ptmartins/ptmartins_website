@@ -1,27 +1,27 @@
 .scrollDown {
-    display: none;
-    width: 31px;
-    height: 48px;
     border: 2px solid #808080;
     border-radius: 20px;
-    position: absolute;
-    left: 50%;
     bottom: 2rem;
-    transform: translateY(-50%);
-    transition: all 0.6s ease-in;
+    display: none;
+    height: 48px;
+    left: 50%;
+    position: absolute;
+    transition: all .6s ease-in;
+    width: 31px;
 }
 
 
 .scrollDown::before {
-    content: "";
-    display: inline-block;
-    width: 4px;
-    height: 11px;
-    background-color: #808080;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
     animation: scrollDown 1.2s ease-in infinite;
+    content: "";
+    background-color: #808080;
+    display: inline-block;
+    height: 11px;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+
+    width: 4px;
 }
 
 @keyframes scrollDown {
@@ -39,6 +39,7 @@
 }
 
 @media all and (min-width: 1240px) {
+    
     .scrollDown {
         display: inline-block;
     }
