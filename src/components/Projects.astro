@@ -5,16 +5,58 @@ const projects = [
     {
         title: 'Carlos Almaça - Tribute page (PT)',
         thumb: '/images/projects/almaca.png',
-        description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil dignissimos perspiciatis voluptatem necessitatibus culpa consequatur, unde doloribus nam ratione voluptate eos, eaque aperiam vero quas nisi expedita labore dolor repudiandae.',
+        description: 'Tribute page to FCUL professor Carlos Almaça', 
         link: 'https://almaca.vercel.app',
-        stack: ['HTML5', 'CSS3', 'Javascript'], 
+        stack: ['HTML', 'CSS', 'Javascript'], 
     },
     {
-        title: 'Professional landing page',
+        title: 'Landing page',
         thumb: '/images/projects/sg19.png',
-        description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil dignissimos perspiciatis voluptatem necessitatibus culpa consequatur, unde doloribus nam ratione voluptate eos, eaque aperiam vero quas nisi expedita labore dolor repudiandae.',
+        description: 'Professional landing page featuring current CV and research publications from ORCID API.',
         link: 'https://sg19.vercel.app',
-        stack: ['Astro.js', 'CSS3', 'Javascript'], 
+        stack: ['Astro.js', 'CSS', 'Javascript'], 
+    },
+    {
+        title: 'Passsword Strength',
+        thumb: '/images/projects/pwd_strength.png',
+        description: 'Codepen case study for a form containing inputs that check for password strength.',
+        link: 'https://codepen.io/snitramordep/full/qBBwXbm',
+        stack: ['HTML', 'CSS', 'LESS', 'Javascript'], 
+    },
+    {
+        title: 'Responsive table',
+        thumb: '/images/projects/responsive_table.png',
+        description: 'Codepen case study for a ultra responsive table.',
+        link: 'https://codepen.io/snitramordep/full/vqzVYx',
+        stack: ['HTML', 'CSS', 'LESS', 'Javascript'], 
+    },
+    {
+        title: 'Realistic iPhone X',
+        thumb: '/images/projects/iPhoneX.png',
+        description: 'Codepen for an ultra realistic iPhone X, with interactivity.',
+        link: 'https://codepen.io/snitramordep/full/yWxooV',
+        stack: ['HTML', 'CSS', 'LESS', 'Javascript'], 
+    },
+    {
+        title: 'Multiple tag handler',
+        thumb: '/images/projects/multiple_tags.png',
+        description: 'Codepen case study for an UI to manage multiple tags.',
+        link: 'https://codepen.io/snitramordep/full/zmyWWa',
+        stack: ['HTML', 'CSS', 'LESS', 'Javascript'], 
+    },
+    {
+        title: 'Interactive Timeline',
+        thumb: '/images/projects/timeline.png',
+        description: 'Codepen mocks for interactive Timeline JS plugin.',
+        link: 'https://codepen.io/snitramordep/full/PBZgwV',
+        stack: ['HTML', 'CSS', 'LESS', 'Javascript'], 
+    },
+    {
+        title: 'Fake text',
+        thumb: '/images/projects/fake_text.png',
+        description: 'Codepen for skeleton fake text.',
+        link: 'https://codepen.io/snitramordep/full/OZPgwp',
+        stack: ['HTML', 'CSS', 'LESS'], 
     }
 ]
 ---
@@ -56,8 +98,24 @@ const projects = [
     }
 
     .project {
+        border: 2px solid var(--bg-color-light);
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(255, 255, 255, .06);
         display: flex;
-        margin-block-end: 9rem;
+        justify-content: space-between;
+        margin-block-end: 6rem;
+        padding: 4.5rem;
+
+        &:nth-of-type(odd) {
+        
+            .project__details {
+                text-align: end;
+            }
+
+            .project__stack {
+                justify-content: flex-end;
+            }
+        }
 
         &:nth-of-type(even) {
             flex-direction: row-reverse;
@@ -77,12 +135,12 @@ const projects = [
         aspect-ratio: 16 / 9;
         flex-shrink: 0;
         margin-inline-end: 4.5rem;
-        width: 35%;
+        width: 40%;
 
         img {
             height: 100%;
             object-fit: cover;
-            object-position: left;
+            object-position: center;
             width: 100%;
         }
     }
@@ -90,6 +148,7 @@ const projects = [
     .project__details {
         display: flex;
         flex-direction: column;
+        width: 40%;
     }
 
     .project__title {
@@ -98,6 +157,7 @@ const projects = [
         font-family: 'Share Tech Mono', monospace;
         font-size: 3.2rem;
         font-weight: 700;
+        margin-block-start: .75rem;
         margin-block-end: 2rem;
 
         &::before {
