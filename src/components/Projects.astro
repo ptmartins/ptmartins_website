@@ -1,0 +1,125 @@
+---
+import { Image } from "astro:assets";
+
+const projects = [
+    {
+        title: 'Carlos Almaça - Tribute page (PT)',
+        thumb: '/images/projects/almaca.png',
+        description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil dignissimos perspiciatis voluptatem necessitatibus culpa consequatur, unde doloribus nam ratione voluptate eos, eaque aperiam vero quas nisi expedita labore dolor repudiandae.',
+        link: 'https://almaca.vercel.app',
+        stack: ['HTML5', 'CSS3', 'Javascript'], 
+    },
+    {
+        title: 'Professional landing page',
+        thumb: '/images/projects/sg19.png',
+        description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil dignissimos perspiciatis voluptatem necessitatibus culpa consequatur, unde doloribus nam ratione voluptate eos, eaque aperiam vero quas nisi expedita labore dolor repudiandae.',
+        link: 'https://sg19.vercel.app',
+        stack: ['Astro.js', 'CSS3', 'Javascript'], 
+    }
+]
+---
+
+<section id="projects" class="section section--projects">
+    <div class="wrapper wrapper--skills">
+        <h1 class="section-title">Projects </h1>
+        <ul class="projects">
+            {
+                projects.map(project => 
+                    <li class="project">
+                        <div class="project__thumb">
+                            <Image src={ project.thumb } alt={ project.title } width="400" height="280" class="project__thumb" />
+                        </div>
+                        <div class="project__details">
+                            <h3 class="project__title"> 
+                                <a href={ project.link } class="u-link" target="_blank"> { project.title } </a>
+                            </h3>
+                            <p class="project__description"> { project.description } </p>    
+                            <p class="project__stack">
+                                { project.stack.map(item => {
+                                    return(
+                                        <span class="language"> { item } </span>                                    
+                                    )
+                                }) }    
+                            </p>
+                        </div>        
+                    </li>
+                )
+            }
+        </ul>
+    </div>
+</section>
+
+<style lang="less">
+
+    .project {
+        display: flex;
+        margin-block-end: 9rem;
+
+        &:nth-of-type(even) {
+            flex-direction: row-reverse;
+
+            .project__thumb {
+                margin-inline-end: 0;
+                margin-inline-start: 4.5rem;
+
+                img {
+                    margin-inline-start: 0;
+                }
+            }
+        }
+    }
+
+    .project__thumb {
+        aspect-ratio: 16 / 9;
+        flex-shrink: 0;
+        margin-inline-end: 4.5rem;
+        width: 35%;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            object-position: left;
+            width: 100%;
+        }
+    }
+
+    .project__details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project__title {
+        color: var(--font-color);
+        display: block;
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 3.2rem;
+        font-weight: 700;
+        margin-block-end: 2rem;
+
+        &::before {
+            color: var(--accent-color);
+            content: '>';
+            margin-inline-end: 1.5rem;
+        }
+    }
+
+    .project__description {
+        flex-grow: 1;
+    }
+
+    .project__stack {
+        display: flex;
+        gap: 1.5rem;
+        margin-block-end: 0;
+    }
+
+    .language {
+        background-color: var(--font-color);
+        border-radius: 5px;
+        color: var(--bg-color);
+        font-weight: 600;
+        font-size: 15px;
+        padding: .75rem 1.5rem;
+        text-transform: uppercase;
+    }
+</style>
