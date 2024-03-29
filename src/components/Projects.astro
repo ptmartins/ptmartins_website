@@ -30,9 +30,9 @@ const projects = [
                             <Image src={ project.thumb } alt={ project.title } width="400" height="280" class="project__thumb" />
                         </div>
                         <div class="project__details">
-                            <h3 class="project__title"> 
+                            <h2 class="project__title"> 
                                 <a href={ project.link } class="u-link" target="_blank"> { project.title } </a>
-                            </h3>
+                            </h2>
                             <p class="project__description"> { project.description } </p>    
                             <p class="project__stack">
                                 { project.stack.map(item => {
