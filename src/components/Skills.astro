@@ -4,7 +4,7 @@ import { Icon } from 'astro-icon/components';
 
 <section id="skills" class="section section--skills">
     <div class="wrapper wrapper--skills">
-        <h1 class="section-title"> Skills </h1>
+        <h1 class="section-title">Skills </h1>
         <ul class="languages">
             <li class="language__item" title="HTML 5">
                 <Icon class="language__icon language__icon--html" name="fa6-brands:html5"/>
@@ -63,7 +63,7 @@ import { Icon } from 'astro-icon/components';
     .languages {
         display: grid;
         gap: 3rem;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
         list-style: none;
     }
 
@@ -117,12 +117,32 @@ import { Icon } from 'astro-icon/components';
         display: none;
     }
 
+    @media all and (min-width: 360px) {
+        .languages {
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        }
+
+    }
+
     @media all and (min-width: 992px) {
+
+        .languages {
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
 
         .language {
             font-size: 8rem;
         }
 
     }
+
+    @media all and (min-width: 1280px) {
+
+        .languages {
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+    }
+    
 
 </style>

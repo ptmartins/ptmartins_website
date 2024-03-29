@@ -121,9 +121,20 @@ strong {
 .u-textarea:hover,
 .u-textarea:active,
 .u-textarea:focus {
-  border-color: #53f6c7;
+  background-color: transparent !important;
+  border-color: #53f6c7; 
   outline: none;
-  transition: all 0.2s ease-in;
+  transition: border-color 0.2s ease-in;
+}
+
+// Override user-agent styles
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+  border-color: var(--accent-color);
+  -webkit-box-shadow: 0 0 0 30px var(--bg-color) inset !important;
+  -webkit-text-fill-color: var(--font-color) !important;
 }
 
 
@@ -197,7 +208,7 @@ strong {
     &::before {
       color: var(--accent-color);
       content: '>';
-      margin-inline-end: 1.5rem;
+      margin-inline-end: 2rem;
     }
 }
 
