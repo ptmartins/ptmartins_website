@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 
 const projects = [
     {
-        title: 'Carlos Almaça - Tribute page (PT)',
+        title: 'Carlos Almaça - Tribute page',
         thumb: '/images/projects/almaca.png',
         description: 'Tribute page to FCUL professor Carlos Almaça', 
         link: 'https://almaca.vercel.app',
@@ -62,7 +62,7 @@ const projects = [
 ---
 
 <section id="projects" class="section section--projects">
-    <div class="wrapper wrapper--skills">
+    <div class="wrapper wrapper--projects">
         <h1 class="section-title">Projects </h1>
         <ul class="projects">
             {
@@ -93,8 +93,10 @@ const projects = [
 
 <style lang="less">
 
-    #projects {
-        display: none;
+    .projects {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: 1fr;
     }
 
     .project {
@@ -102,45 +104,21 @@ const projects = [
         border-radius: 12px;
         box-shadow: 0 6px 18px rgba(255, 255, 255, .06);
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
         margin-block-end: 6rem;
-        padding: 4.5rem;
-
-        &:nth-of-type(odd) {
-        
-            .project__details {
-                text-align: end;
-            }
-
-            .project__stack {
-                justify-content: flex-end;
-            }
-        }
-
-        &:nth-of-type(even) {
-            flex-direction: row-reverse;
-
-            .project__thumb {
-                margin-inline-end: 0;
-                margin-inline-start: 4.5rem;
-
-                img {
-                    margin-inline-start: 0;
-                }
-            }
-        }
+        padding: 3rem;
     }
 
     .project__thumb {
         aspect-ratio: 16 / 9;
         flex-shrink: 0;
-        margin-inline-end: 4.5rem;
-        width: 40%;
+        width: 100%;
 
         img {
             height: 100%;
-            object-fit: cover;
-            object-position: center;
+            object-fit: contain;
+            object-position: center top;
             width: 100%;
         }
     }
@@ -148,22 +126,22 @@ const projects = [
     .project__details {
         display: flex;
         flex-direction: column;
-        width: 40%;
+        flex-grow: 1;
     }
 
     .project__title {
         color: var(--font-color);
         display: block;
         font-family: 'Share Tech Mono', monospace;
-        font-size: 3.2rem;
+        font-size: 2.7rem;
         font-weight: 700;
-        margin-block-start: .75rem;
+        margin-block-start: 0;
         margin-block-end: 2rem;
 
         &::before {
             color: var(--accent-color);
             content: '>';
-            margin-inline-end: 1.5rem;
+            margin-inline-end: .75rem;
         }
     }
 
@@ -182,14 +160,17 @@ const projects = [
         border-radius: 5px;
         color: var(--bg-color);
         font-weight: 600;
-        font-size: 15px;
+        font-size: 13px;
         padding: .75rem 1.5rem;
         text-transform: uppercase;
     }
 
     @media all and (min-width: 992px) {
-        #projects {
-            display: block;
+
+        .projects {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 </style>
